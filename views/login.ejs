@@ -1,0 +1,29 @@
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8">
+  <title>Term Project </title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <center><h1><%= message %> <%= message2 %> </h1></center>
+  <div class="center">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      <div class="txt_field">
+        <input type="text" name="ID" required>
+        <span></span>
+        <label>User ID</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password" required>
+        <span></span>
+        <label>Password</label>
+      </div>
+      <div class="pass">Forgot Password?</div>
+      <input type="submit" value="Login">
+      <div class="signup_link">
+        Not a member? <a href="/register">Signup</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
