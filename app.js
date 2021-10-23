@@ -29,15 +29,7 @@ app.set('view engine', 'ejs');
 app.use('/register', registerRoutes);
 app.use('/login', loginRoutes);
 app.use('/profile', profileRoutes);
-// app.use('/', require('./routes/pages'));
-
-// app.use('/', require('./routes/authentication'));
 
 app.listen(process.env.PORT || 3000, () => {console.log("Server is running on port 3000!");})
 
-// connection.end(err => {
-//     if(err){
-//         throw err.message();
-//     }
-// })
 

@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('login', {message: req.flash('error'), message2: req.flash('success')})
+    res.render('login', {message: req.flash('error'), message2: req.flash('success'), message3: req.flash('warning')})
 });
 
 router.post('/', (req, res) => {

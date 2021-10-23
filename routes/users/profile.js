@@ -1,4 +1,3 @@
-const { application } = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -7,7 +6,7 @@ router.get('/', (req, res) => {
         req.flash('error', 'You need to login to see this page.');
         res.redirect('/login');
     } else {
-        res.send(`Welcome to your profile, user ${req.session.UserID}! <br> <a href="/profile/logout">logout</a>`);
+        res.render('profile', {message: `Welcome to your profile, user ${req.session.UserID}`});
     }
 });
 

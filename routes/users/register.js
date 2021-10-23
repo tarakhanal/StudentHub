@@ -19,6 +19,12 @@ router.post('/', async (req, res) => {
     /* Insert logic here to see if USER with particular UNetID already exists */
     /*                                                                        */
     /*                                                                        */
+    connection.query(`select UserID from users where UserID = ${UNetID}`, (err, result) => {
+        if(result.length > 0) {
+            req.flash('warning', 'You already have an account. Please login');
+            return res.redirect('/login');
+        }
+    } )
 
     const hash = await bcrypt.hash(password, 12);
     const sql = `INSERT INTO Users VALUES(${UNetID}, '${firstName}', '${lastName}', '${email}', '${'me.jpg'}', '${hash}')`;
